@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="DBGlobal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sys\SysAdvertisingRespository.cs" />
     <Compile Include="Sys\SysAreaRespository.cs" />
     <Compile Include="Sys\SysIFunctionRespository.cs" />
     <Compile Include="Sys\SysIndustryRespository.cs" />

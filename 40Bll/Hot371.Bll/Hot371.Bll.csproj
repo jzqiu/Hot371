@@ -46,6 +46,7 @@
     <Compile Include="OperationResult.cs" />
     <Compile Include="OperationResultType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sys\SysAdvertisingBiz.cs" />
     <Compile Include="Sys\SysAreaBiz.cs" />
     <Compile Include="Sys\SysIFunctionBiz.cs" />
     <Compile Include="Sys\SysIndustryBiz.cs" />
