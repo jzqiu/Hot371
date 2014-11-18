@@ -16,7 +16,7 @@ namespace Hot371.WS.Send
             ServiceBase[] ServicesToRun;
             ServicesToRun = new ServiceBase[] 
             { 
-                new Service1() 
+                new PushJobServices() 
             };
             ServiceBase.Run(ServicesToRun);
         }

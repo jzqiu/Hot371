@@ -1,6 +1,6 @@
 ﻿namespace Hot371.WS.Send
 {
-    partial class Service1
+    partial class PushJobServices
     {
         /// <summary> 
         /// 必需的设计器变量。
@@ -17,6 +17,8 @@
             {
                 components.Dispose();
             }
+            //Windows Services  释放时释放定时器
+           // PushTimer.Dispose();
             base.Dispose(disposing);
         }
 
@@ -29,7 +31,8 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            this.ServiceName = "Service1";
+            this.ServiceName = "PushJobServices";
+            //Com.Dianping.Cat.Cat.Initialize();
         }
 
         #endregion
