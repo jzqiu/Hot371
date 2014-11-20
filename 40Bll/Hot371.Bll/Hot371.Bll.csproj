@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DDC0D93C-B3B3-4393-8BCC-045ECA40CDAB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Hot371.Bll</RootNamespace>
+    <AssemblyName>Hot371.Bll</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TCBase.Saker.Core">
+      <HintPath>..\..\00Dll\TCBase.Saker.Core.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Ent\EnterpriseBiz.cs" />
+    <Compile Include="OperationResult.cs" />
+    <Compile Include="OperationResultType.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sys\SysAdvertisingBiz.cs" />
+    <Compile Include="Sys\SysAreaBiz.cs" />
+    <Compile Include="Sys\SysIFunctionBiz.cs" />
+    <Compile Include="Sys\SysIndustryBiz.cs" />
+    <Compile Include="Sys\SysParametersBiz.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\10Framework\QJZ.Framework.Utility\QJZ.Framework.Utility.csproj">
+      <Project>{3d866019-d27a-4c23-a0d7-7d4d3dcab2f4}</Project>
+      <Name>QJZ.Framework.Utility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\20Entity\Hot371.Model\Hot371.Model.csproj">
+      <Project>{ad12e3b8-b49a-49e2-9fc2-bad5e708aa43}</Project>
+      <Name>Hot371.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\20Entity\Hot371.ViewModel\Hot371.ViewModel.csproj">
+      <Project>{bdff3452-6154-4f4a-9b84-e4a2b19b0ab7}</Project>
+      <Name>Hot371.ViewModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\30Dal\Hot371.Dal\Hot371.Dal.csproj">
+      <Project>{bfbd8557-c51f-4ca8-adaf-c6d9eabce682}</Project>
+      <Name>Hot371.Dal</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
