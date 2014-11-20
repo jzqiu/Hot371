@@ -11,7 +11,7 @@ using QJZ.Framework.Contract;
 
 namespace QJZ.Framework.Web
 {
-    public class ControllerBase : Controller
+    public class BaseController : Controller
     {
         /// <summary>
         /// 操作人，传IP....到后端记录

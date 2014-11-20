@@ -41,10 +41,13 @@
   <ItemGroup>
     <Compile Include="App\AppCollection.cs" />
     <Compile Include="App\AppDefTime.cs" />
+    <Compile Include="App\AppEducation.cs" />
     <Compile Include="App\AppIdleTime.cs" />
+    <Compile Include="App\AppIntention.cs" />
     <Compile Include="App\Applicant.cs" />
     <Compile Include="App\AppRecord.cs" />
     <Compile Include="App\AppSubscribe.cs" />
+    <Compile Include="App\AppWorkExperience.cs" />
     <Compile Include="Ent\EApply.cs" />
     <Compile Include="Ent\Enterprise.cs" />
     <Compile Include="Ent\EWeiXin.cs" />

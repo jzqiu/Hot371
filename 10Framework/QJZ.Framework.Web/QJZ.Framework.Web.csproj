@@ -47,7 +47,7 @@
   <ItemGroup>
     <Compile Include="AuthorizeFilterAttribute.cs" />
     <Compile Include="AuthorizeIgnoreAttribute.cs" />
-    <Compile Include="ControllerBase.cs" />
+    <Compile Include="BaseController.cs" />
     <Compile Include="Controls\CheckBoxList.cs" />
     <Compile Include="Controls\HtmlPrefixScope.cs" />
     <Compile Include="Controls\MvcPager\PagerBuilder.cs" />
