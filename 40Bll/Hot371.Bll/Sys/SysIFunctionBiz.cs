@@ -44,5 +44,16 @@ namespace Hot371.Bll.Sys
             }
             return all;
         }
+
+        public List<SysIFunction> GetByIndustryId(int iId = 0)
+        {
+            if (iId == 0)
+            {
+                return GetAll().ToList();
+            }
+
+            var all = GetAll();
+            return all.Where(f => f.IId == iId).ToList();
+        }
     }
 }
