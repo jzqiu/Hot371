@@ -130,6 +130,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WXApi.ashx.cs">
+      <DependentUpon>WXApi.ashx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -176,6 +179,16 @@
       <Project>{ddc0d93c-b3b3-4393-8bcc-045eca40cdab}</Project>
       <Name>Hot371.Bll</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\40Bll\WeiXin.Bll\WeiXin.Bll.csproj">
+      <Project>{be346bc4-558a-4ca9-880b-0e792766994b}</Project>
+      <Name>WeiXin.Bll</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="WXApi.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Enterprise\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

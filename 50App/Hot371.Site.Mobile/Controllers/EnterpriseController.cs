@@ -14,6 +14,8 @@ namespace Hot371.Site.Mobile.Controllers
 
         public ActionResult Index()
         {
+            var url = Request.Url;
+            ViewBag.Url = url;
             return View();
         }
         //企业名称  直招    服务外包

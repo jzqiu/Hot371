@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Hot371.Bll.Sys;
+using WeiXin.Bll;
 
 namespace Hot371.Site.Mobile.Controllers
 {
@@ -15,6 +16,8 @@ namespace Hot371.Site.Mobile.Controllers
 
         public ActionResult Index()
         {
+            var url = AuthorizeUrl.GetOpenIdUrl(@"http://wx.17u.cn/flight/getopenid.html?url=http://10.1.201.8/test/Enterprise/index?ok=1");
+            return Redirect(url);
             //var test = new SysAreaBiz().GetAreaByLevel(1);
             //var test2 = new SysAreaBiz().GetAreaByParent(320500);
             return View();
