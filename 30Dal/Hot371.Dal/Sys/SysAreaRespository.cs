@@ -12,8 +12,5 @@ namespace Hot371.Dal.Sys
     /// </summary>
     public class SysAreaRespository : Respository<SysArea>
     {
-        public SysAreaRespository()
-            :base(DBGlobal.Hot371.ToString())
-        {}
     }
 }

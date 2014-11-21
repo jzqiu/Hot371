@@ -9,8 +9,5 @@ namespace Hot371.Dal.Sys
 {
     public class SysAdvertisingRespository : Respository<SysAdvertising>
     {
-        public SysAdvertisingRespository()
-            :base(DBGlobal.Hot371.ToString())
-        { }
     }
 }

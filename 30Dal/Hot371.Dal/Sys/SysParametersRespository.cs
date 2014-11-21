@@ -12,10 +12,5 @@ namespace Hot371.Dal.Sys
     /// </summary>
     public class SysParametersRespository : Respository<SysParameters>
     {
-        public SysParametersRespository() 
-            : base(DBGlobal.Hot371.ToString())
-        {
-        }
-
     }
 }

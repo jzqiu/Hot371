@@ -156,6 +156,14 @@ namespace Hot371.Model
 			set;
 			get;
 		}
+        /// <summary>
+        /// 可下载简历数
+        /// </summary>
+        public int? DownloadNumbers
+        {
+            set;
+            get;
+        }
 		/// <summary>
 		/// 中介发布的企业是否上线，默认 0； 直招企业 默认 1
 		/// </summary>

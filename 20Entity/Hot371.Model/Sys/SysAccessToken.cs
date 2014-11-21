@@ -24,5 +24,11 @@ namespace Hot371.Model.Sys
             set;
             get;
         }
+
+        public DateTime LastTime
+        {
+            set;
+            get;
+        }
     }
 }

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Web;
 using System.Web.Security;
+using Hot371.Dal.Sys;
 using Hot371.Model.Sys;
 using Hot371.ViewModel;
 using QJZ.Framework.Utility;
@@ -46,9 +47,9 @@ namespace WeiXin.Bll
         private static bool CheckSignature(string token, string signature, string timestamp, string nonce)
         {
             //将token、timestamp、nonce三个参数进行字典序排序
-            string[] ArrTmp = { token, timestamp, nonce };
-            Array.Sort(ArrTmp);
-            string tmpStr = string.Join("", ArrTmp);
+            string[] arrTmp = { token, timestamp, nonce };
+            Array.Sort(arrTmp);
+            string tmpStr = string.Join("", arrTmp);
 
             //将三个参数字符串拼接成一个字符串进行sha1加密
             tmpStr = FormsAuthentication.HashPasswordForStoringInConfigFile(tmpStr, "SHA1");
@@ -76,9 +77,11 @@ namespace WeiXin.Bll
         public static string GetExistAccessToken()
         {
             string token = string.Empty;
+            var respository = new SysAccessTokenRespository();
             //读库
-            //token
-            DateTime lastTime = DateTime.Now;
+            var exist = respository.GetEntityById(1);
+            token = exist.access_token;
+            DateTime lastTime = exist.LastTime;
 
             if (DateTime.Now > lastTime)
             {
@@ -87,6 +90,10 @@ namespace WeiXin.Bll
                 var newToken = GetAccessToken();
                 lastTime = lastTime.AddSeconds(newToken.expires_in);
                 //入库
+                exist.LastTime = lastTime;
+                exist.access_token = newToken.access_token;
+                exist.expires_in = newToken.expires_in;
+                respository.Modify(exist);
 
                 token = newToken.access_token;
             }

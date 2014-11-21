@@ -12,8 +12,5 @@ namespace Hot371.Dal.Sys
     /// </summary>
     public class SysIndustryRespository : Respository<SysIndustry>
     {
-        public SysIndustryRespository()
-            :base(DBGlobal.Hot371.ToString())
-        {}
     }
 }

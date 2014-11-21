@@ -47,7 +47,9 @@
   <ItemGroup>
     <Compile Include="DBGlobal.cs" />
     <Compile Include="Ent\EnterpriseRespository.cs" />
+    <Compile Include="Ent\EWeiXinRespository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sys\SysAccessTokenRespository.cs" />
     <Compile Include="Sys\SysAdvertisingRespository.cs" />
     <Compile Include="Sys\SysAreaRespository.cs" />
     <Compile Include="Sys\SysIFunctionRespository.cs" />

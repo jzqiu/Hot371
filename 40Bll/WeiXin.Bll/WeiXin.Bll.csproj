@@ -39,6 +39,9 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="TCBase.Saker.Core">
+      <HintPath>..\..\00Dll\TCBase.Saker.Core.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AuthorizeUrl.cs" />
@@ -57,6 +60,10 @@
     <ProjectReference Include="..\..\20Entity\Hot371.ViewModel\Hot371.ViewModel.csproj">
       <Project>{BDFF3452-6154-4F4A-9B84-E4A2B19B0AB7}</Project>
       <Name>Hot371.ViewModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\30Dal\Hot371.Dal\Hot371.Dal.csproj">
+      <Project>{BFBD8557-C51F-4CA8-ADAF-C6D9EABCE682}</Project>
+      <Name>Hot371.Dal</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
