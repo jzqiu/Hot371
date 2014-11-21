@@ -50,6 +50,14 @@
       <Project>{3D866019-D27A-4C23-A0D7-7D4D3DCAB2F4}</Project>
       <Name>QJZ.Framework.Utility</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\20Entity\Hot371.Model\Hot371.Model.csproj">
+      <Project>{AD12E3B8-B49A-49E2-9FC2-BAD5E708AA43}</Project>
+      <Name>Hot371.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\20Entity\Hot371.ViewModel\Hot371.ViewModel.csproj">
+      <Project>{BDFF3452-6154-4F4A-9B84-E4A2B19B0AB7}</Project>
+      <Name>Hot371.ViewModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

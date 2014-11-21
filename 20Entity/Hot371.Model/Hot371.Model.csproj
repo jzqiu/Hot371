@@ -55,6 +55,7 @@
     <Compile Include="Pos\Position.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Pos\PTimeRequirement.cs" />
+    <Compile Include="Sys\SysAccessToken.cs" />
     <Compile Include="Sys\SysAdvertising.cs" />
     <Compile Include="Sys\SysArea.cs" />
     <Compile Include="Sys\SysIFunction.cs" />

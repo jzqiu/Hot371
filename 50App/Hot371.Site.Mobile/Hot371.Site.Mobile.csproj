@@ -175,6 +175,10 @@
       <Project>{ad12e3b8-b49a-49e2-9fc2-bad5e708aa43}</Project>
       <Name>Hot371.Model</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\20Entity\Hot371.ViewModel\Hot371.ViewModel.csproj">
+      <Project>{BDFF3452-6154-4F4A-9B84-E4A2B19B0AB7}</Project>
+      <Name>Hot371.ViewModel</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\40Bll\Hot371.Bll\Hot371.Bll.csproj">
       <Project>{ddc0d93c-b3b3-4393-8bcc-045eca40cdab}</Project>
       <Name>Hot371.Bll</Name>

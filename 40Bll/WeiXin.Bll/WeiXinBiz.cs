@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Web;
 using System.Web.Security;
+using Hot371.Model.Sys;
+using Hot371.ViewModel;
 using QJZ.Framework.Utility;
 
 namespace WeiXin.Bll
@@ -66,11 +68,12 @@ namespace WeiXin.Bll
 
         //http://blog.csdn.net/babauyang/article/details/20616107
 
+        #region Access_Token
         /// <summary>
         /// 根据当前日期 判断Access_Token 是否超期  如果超期返回新的Access_Token   否则返回之前的Access_Token 
         /// </summary>
         /// <returns></returns>
-        public static string IsExistAccess_Token()
+        public static string GetExistAccessToken()
         {
             string token = string.Empty;
             //读库
@@ -80,9 +83,31 @@ namespace WeiXin.Bll
             if (DateTime.Now > lastTime)
             {
                 //重新获取
+                lastTime = DateTime.Now;
+                var newToken = GetAccessToken();
+                lastTime = lastTime.AddSeconds(newToken.expires_in);
+                //入库
+
+                token = newToken.access_token;
             }
 
             return token;
         }
+
+        private static SysAccessToken GetAccessToken()
+        {
+            string url = AuthorizeUrl.GetTokenUrl();
+            return NetHelper.HttpGet<SysAccessToken>(url, SerializationType.Json);
+        }
+        #endregion
+
+        #region 发送消息
+        public static void SendMsg(WeiXinMsg msg)
+        {
+            string token = GetExistAccessToken();
+            string url = AuthorizeUrl.GetMsgSendUrl(token);
+            var result = NetHelper.HttpPost(url, msg, SerializationType.Json);
+        }
+        #endregion
     }
 }

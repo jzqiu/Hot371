@@ -5,8 +5,6 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Web;
-using System.Web.Security;
-using QJZ.Framework.Utility;
 using WeiXin.Bll;
 
 namespace Hot371.Site.Mobile
