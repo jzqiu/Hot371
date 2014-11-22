@@ -125,7 +125,7 @@ namespace Hot371.Model
 			get;
 		}
 		/// <summary>
-		/// 限定发布职位数
+        /// 企业可上线职位数
 		/// </summary>
 		public int? PublishNumbers
 		{

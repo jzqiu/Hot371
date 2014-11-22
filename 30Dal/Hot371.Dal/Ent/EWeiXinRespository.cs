@@ -12,10 +12,18 @@ namespace Hot371.Dal.Ent
     {
         public IEnumerable<EWeiXin> QueryEId(string openId)
         {
-            string sql = string.Format(@"SELECT [EId]
+            var sql = string.Format(@"SELECT [EId]
                                 FROM [EWeiXin]
                                 where [OpenId]='{0}'", openId);
             return base.GetList(sql);
+        }
+
+        public void UpdateEId(string openId, int eId)
+        {
+            var sql = string.Format(@"UPDATE dbo.EWeiXin
+                                SET EId={0},BindTime=GETDATE()
+                                WHERE OpenId='{1}'", eId, openId);
+            base.Execute(sql);
         }
     }
 }

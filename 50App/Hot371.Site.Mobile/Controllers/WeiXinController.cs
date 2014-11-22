@@ -6,7 +6,6 @@ using System.Web;
 using System.Web.Mvc;
 using Hot371.Bll.Ent;
 using Hot371.Model;
-using Newtonsoft.Json;
 using QJZ.Framework.Utility;
 using WeiXin.Bll;
 
@@ -24,7 +23,7 @@ namespace Hot371.Site.Mobile.Controllers
             if (string.IsNullOrEmpty(code))
             {
                 //授权失败
-                return RedirectToAction("Register", "Enterprise");
+                return Redirect(reurl);
             }
 
             var user = WeiXinBiz.GetUserInfo(code);
@@ -36,22 +35,27 @@ namespace Hot371.Site.Mobile.Controllers
                 //企业
                 if (reurl.ToLower().Contains("enterprise"))
                 {
+                    //再次查询
                     var biz = new EWeiXinBiz();
                     int? eId = biz.GetEnterpriseId(user.openid);
-                    if (eId != null)
+                    if (eId > 0)
                     {
-                        //已存在，跳企业首页
+                        //已存在并关联，跳企业首页
                         return RedirectToAction("Index", "Enterprise", new {entId = eId});
                     }
-
-                    //不存在，转注册
-                    var eWeiXin = new EWeiXin
+                    if (eId == null)
                     {
-                        OpenId = user.openid,
-                        NikeName = user.nickname,
-                        HeadUrl = user.headimgurl
-                    };
-                    biz.Insert(eWeiXin);
+                        //不存在
+                        var eWeiXin = new EWeiXin
+                        {
+                            EId = 0, //未关联
+                            OpenId = user.openid,
+                            NikeName = user.nickname,
+                            HeadUrl = user.headimgurl
+                        };
+                        biz.Add(eWeiXin);
+                    }
+                    //转注册
                     return RedirectToAction("Register", "Enterprise");
                 }
                 //应聘者

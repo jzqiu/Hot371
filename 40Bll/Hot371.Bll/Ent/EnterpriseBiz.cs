@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using Hot371.Dal.Ent;
@@ -81,6 +82,14 @@ namespace Hot371.Bll.Ent
         /// <returns></returns>
         public int Register(Enterprise enterprise)
         {
+            enterprise.Status = 5;
+            enterprise.PublishNumbers = int.Parse(ConfigurationManager.AppSettings["EnterprisePublishPositionNumbers"]);
+            enterprise.DownloadNumbers = int.Parse(ConfigurationManager.AppSettings["CanDownloadNumbers"]);
+            if (enterprise.ETypeId == 20)
+            {
+                //中介
+                enterprise.ENumbers = int.Parse(ConfigurationManager.AppSettings["WeixinAppSecret"]);
+            }
             return _respository.Add(enterprise);
         }
     }

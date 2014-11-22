@@ -44,6 +44,22 @@ namespace Hot371.Model
 			set;
 			get;
 		}
+        /// <summary>
+        /// 全拼
+        /// </summary>
+        public string QuanPin
+        {
+            set;
+            get;
+        }
+        /// <summary>
+        /// 拼音首字
+        /// </summary>
+        public string PYShouZi
+        {
+            set;
+            get;
+        }
 		#endregion Model
 
 
