@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Hot371.Dal.Ent;
+using Hot371.Model;
 
 namespace Hot371.Bll.Ent
 {
@@ -24,6 +25,11 @@ namespace Hot371.Bll.Ent
             }
 
             return null;
+        }
+
+        public void Insert(EWeiXin eWeiXin)
+        {
+            _respository.Add(eWeiXin);
         }
     }
 }

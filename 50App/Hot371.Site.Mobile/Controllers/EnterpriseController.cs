@@ -29,7 +29,7 @@ namespace Hot371.Site.Mobile.Controllers
             if (string.IsNullOrEmpty(openId))
             {
                 //重新授权获取
-                string url = AuthorizeUrl.GetUserInfoUrl(RegisterUrl);
+                string url = AuthorizeUrl.GetOauth2UserInfoUrl(RegisterUrl);
                 return Redirect(url);
             }
 
@@ -37,8 +37,8 @@ namespace Hot371.Site.Mobile.Controllers
             int? eId = biz.GetEnterpriseId(openId);
             if (eId == null)
             {
-                //重新授权获取
-                string url = AuthorizeUrl.GetUserInfoUrl(RegisterUrl);
+                //授权获取
+                string url = AuthorizeUrl.GetOauth2UserInfoUrl(RegisterUrl);
                 return Redirect(url);
             }
 

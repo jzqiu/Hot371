@@ -69,7 +69,7 @@ namespace WeiXin.Bll
 
         //http://blog.csdn.net/babauyang/article/details/20616107
 
-        #region Access_Token
+        #region 全局Access_Token
         /// <summary>
         /// 根据当前日期 判断Access_Token 是否超期  如果超期返回新的Access_Token   否则返回之前的Access_Token 
         /// </summary>
@@ -116,5 +116,24 @@ namespace WeiXin.Bll
             var result = NetHelper.HttpPost(url, msg, SerializationType.Json);
         }
         #endregion
+
+
+        public static WeiXinUser GetUserInfo(string code)
+        {
+            string url = AuthorizeUrl.GetUserTokenUrl(code);
+            var token = NetHelper.HttpGet<WeiXinUserToken>(url, SerializationType.Json);
+            if (token.errcode==0)
+            {
+                //成功
+                url = AuthorizeUrl.GetUserInfoUrl(token.access_token, token.openid);
+                var user = NetHelper.HttpGet<WeiXinUser>(url, SerializationType.Json);
+                if (user.errcode==0)
+                {
+                    return user;
+                }
+            }
+
+            return null;
+        }
     }
 }
