@@ -4,9 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Hot371.Bll.Sys;
-using Hot371.ViewModel;
-using WeiXin.Bll;
+using Hot371.Bll;
 
 namespace Hot371.Site.Mobile.Controllers
 {
@@ -29,6 +27,9 @@ namespace Hot371.Site.Mobile.Controllers
             //WeiXinBiz.SendMsg(msg);
             //var test = new SysAreaBiz().GetAreaByLevel(1);
             //var test2 = new SysAreaBiz().GetAreaByParent(320500);
+
+            var biz = new HomeBiz();
+            var model = biz.GetMobileHome();
             return View();
         }
     }

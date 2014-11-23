@@ -49,7 +49,7 @@ namespace Hot371.Model
 			get;
 		}
 		/// <summary>
-		/// 性别：1 男，0 女
+		/// 性别：1 男，2 女
 		/// </summary>
 		public int? Sex
 		{

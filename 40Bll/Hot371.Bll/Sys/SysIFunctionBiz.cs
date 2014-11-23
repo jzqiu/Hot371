@@ -8,6 +8,9 @@ using QJZ.Framework.Utility;
 
 namespace Hot371.Bll.Sys
 {
+    /// <summary>
+    /// 职能业务逻辑
+    /// </summary>
     public class SysIFunctionBiz
     {
         /// <summary>
@@ -45,6 +48,11 @@ namespace Hot371.Bll.Sys
             return all;
         }
 
+        /// <summary>
+        /// 根据行业ID获取
+        /// </summary>
+        /// <param name="iId"></param>
+        /// <returns></returns>
         public List<SysIFunction> GetByIndustryId(int iId = 0)
         {
             if (iId == 0)
@@ -54,6 +62,23 @@ namespace Hot371.Bll.Sys
 
             var all = GetAll();
             return all.Where(f => f.IId == iId).ToList();
+        }
+
+        /// <summary>
+        /// 根据关键词获取，支持拼音
+        /// </summary>
+        /// <param name="keyWord"></param>
+        /// <returns></returns>
+        public List<SysIFunction> GetByKeyWord(string keyWord)
+        {
+            var all = GetAll();
+            var result =
+                all.Where(f => f.FName.Contains(keyWord) 
+                    || f.QuanPin.Contains(keyWord) 
+                    || f.PYShouZi.Contains(keyWord))
+                    .Take(5)
+                    .ToList();
+            return result;
         }
     }
 }

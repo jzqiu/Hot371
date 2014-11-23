@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Ent\EnterpriseBiz.cs" />
     <Compile Include="Ent\EWeiXinBiz.cs" />
+    <Compile Include="HomeBiz.cs" />
     <Compile Include="OperationResult.cs" />
     <Compile Include="OperationResultType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

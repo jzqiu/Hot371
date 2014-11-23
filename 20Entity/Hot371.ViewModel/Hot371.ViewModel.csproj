@@ -40,10 +40,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IndustryFunctionsVM.cs" />
+    <Compile Include="MobileHomeVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WeiXinMsg.cs" />
-    <Compile Include="WeiXinUser.cs" />
-    <Compile Include="WeiXinUserToken.cs" />
+    <Compile Include="WeiXin\WeiXinMsg.cs" />
+    <Compile Include="WeiXin\WeiXinUser.cs" />
+    <Compile Include="WeiXin\WeiXinUserToken.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Hot371.Model\Hot371.Model.csproj">

@@ -38,7 +38,7 @@ namespace Hot371.Bll.Ent
                 return cache;
             }
 
-            var all = _respository.GetAll();
+            var all = _respository.QueryFamousEnt();
             try
             {
                 Caching.Set(CacheKey, all, 60);
@@ -54,7 +54,7 @@ namespace Hot371.Bll.Ent
         /// </summary>
         /// <param name="cityId"></param>
         /// <returns></returns>
-        public List<Enterprise> GetCityFamousEnt(int cityId)
+        public List<Enterprise> GetCityFamousEnt(int cityId=0)
         {
             var ents = GetFamousEnt().OrderBy(e => e.FamousSort);
             if (cityId > 0)
