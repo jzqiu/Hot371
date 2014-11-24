@@ -14,8 +14,9 @@ namespace Hot371.Site.Enterprise.Controllers
 
         public ActionResult Index()
         {
-            var stream = QRCodeGenerate.BuildQrCode(@"http://m.ly.com", QrCodeLevel.H);
-            return File(stream, @"image/jpeg");
+            //var stream = QRCodeGenerate.BuildQrCode(@"http://m.ly.com", QrCodeLevel.H);
+            //return File(stream, @"image/jpeg");
+            return View();
         }
 
     }
